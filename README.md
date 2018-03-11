@@ -10,7 +10,7 @@ Django has admin functionality built-in, so you can manage the site and easily a
 a login. Due to these features and many more, Django is extremely quick to build a fairly secure website. 
 
 If you wish to not be placed in the box that Django restricts you to, Flask is an excellent alternative. However,
-time to flight is cab be a bit longer with Flask.
+time to flight can be a bit longer with Flask.
 
 I have another site up [with Django](https://wonkrz.com/), if you wanted to see something working.
 
