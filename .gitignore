@@ -1,0 +1,8 @@
+*.pyc
+.idea/
+
+# settings
+morgynstryker/config/settings.py
+
+# starting db
+db.sqlite3
