@@ -222,6 +222,13 @@ to incorporate into this should anyone else want to learn or contribute. But, si
 me developing this application, I may elect to keep things simple and sweet.
 
 
+## Documentation
+
+Sphinx has been installed for application documentation, this can be viewed by doing the following:
+
+    (morgynstryker)$ open docs/build/html/index.html
+    
+
 Stay tuned for more development!
 
 ---
