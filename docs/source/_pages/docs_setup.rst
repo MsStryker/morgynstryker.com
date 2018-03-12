@@ -20,14 +20,14 @@ created.
 Creating
 --------
 
-If you would like to update the documentation, you will modify the contents in the `docs/source` folder and
-then run the following in the `docs` directory::
+GitHub pages requires your `index.html` page to exist within the root of your `docs` directory to host
+them for you, thus a Command class was created to allow you to build the docs::
 
-    (morgynstryker)$ make html
+    (morgynstryker)$ python setup.py docs
 
 Viewing
 -------
 The documentation can be viewed locally by doing the following (in the docs directory)::
 
-    (morgynstryker)$ open docs/build/html/index.html
+    (morgynstryker)$ open docs/index.html
 
