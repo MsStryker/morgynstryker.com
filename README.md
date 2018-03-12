@@ -226,7 +226,7 @@ me developing this application, I may elect to keep things simple and sweet.
 
 Sphinx has been installed for application documentation, this can be viewed by doing the following:
 
-    (morgynstryker)$ open docs/build/html/index.html
+    (morgynstryker)$ open docs/index.html
     
 
 Stay tuned for more development!

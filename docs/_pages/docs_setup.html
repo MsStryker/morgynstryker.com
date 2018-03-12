@@ -162,7 +162,8 @@ how to use <a class="reference external" href="http://www.sphinx-doc.org/en/mast
 <div class="section" id="initial-setup">
 <h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
 <p>This documentation was initially setup running the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(morgynstryker)$ sphinx-quickstart
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(morgynstryker)$ cd docs
+(morgynstryker)$ sphinx-quickstart
 Welcome to the Sphinx 1.7.1 quickstart utility.
 ...
 </pre></div>
@@ -172,16 +173,16 @@ created.</p>
 </div>
 <div class="section" id="creating">
 <h2>Creating<a class="headerlink" href="#creating" title="Permalink to this headline">¶</a></h2>
-<p>If you would like to update the documentation, you will modify the contents in the <cite>docs/source</cite> folder and
-then run the following in the <cite>docs</cite> directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(morgynstryker)$ make html
+<p>GitHub pages requires your <cite>index.html</cite> page to exist within the root of your <cite>docs</cite> directory to host
+them for you, thus a Command class was created to allow you to build the docs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(morgynstryker)$ python setup.py docs
 </pre></div>
 </div>
 </div>
 <div class="section" id="viewing">
 <h2>Viewing<a class="headerlink" href="#viewing" title="Permalink to this headline">¶</a></h2>
 <p>The documentation can be viewed locally by doing the following (in the docs directory):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(morgynstryker)$ open docs/build/html/index.html
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(morgynstryker)$ open docs/index.html
 </pre></div>
 </div>
 </div>
