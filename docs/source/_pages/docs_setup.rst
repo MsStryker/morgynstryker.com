@@ -9,6 +9,7 @@ Initial Setup
 
 This documentation was initially setup running the following command::
 
+    (morgynstryker)$ cd docs
     (morgynstryker)$ sphinx-quickstart
     Welcome to the Sphinx 1.7.1 quickstart utility.
     ...
