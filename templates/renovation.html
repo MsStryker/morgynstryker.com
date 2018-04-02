@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Morgyn Stryker">
+    <meta name="description" content="Morgyn Stryker site renovation">
+    <meta name="keywords" content="Morgyn Stryker, blog">
+    <!--<link rel="shortcut icon" href="/static/favicon.png">-->
+    <link rel="canonical" href="https://morgynstryker.com/">
+    <title>Morgyn Stryker Site Renovation</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        footer {
+            margin-top: auto;
+            color: #FFFFFF;
+            background-color: #4C4C4C;
+            padding: 1rem;
+            text-align: right;
+            font-weight: 300;
+        }
+        footer a {
+            text-decoration: none;
+            color: #ff00ac;
+            font-weight: 500;
+        }
+        footer a:hover {
+            color: #d0008c;
+        }
+        .nav-brand {
+            display: block;
+            padding: .25rem 1rem;
+            text-align: right;
+        }
+        .navbar {
+            padding: .25rem;
+            top: 0;
+            right: 0;
+            left: 0;
+            color: #FFFFFF;
+            background-color: #000000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+        .logo-image {
+            height: 30px;
+            max-height: 30px;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 2;
+            overflow-y: scroll;
+        }
+        .main-wrapper {
+            padding: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-shrink: 0;
+            flex-grow: 2;
+        }
+        @media (max-width: 520px) {
+            h1 {
+                font-size: 1.75rem;
+                margin: .4rem 0;
+            }
+            .description-text {
+                font-size: 1.25rem;
+            }
+            .main-wrapper {
+                flex-direction: column;
+                padding: 1rem;
+            }
+        }
+        .otter-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .description-text {
+            font-size: 1.5rem;
+            color: #404040;
+            margin: auto 1rem;
+            max-width: 560px;
+        }
+        .otter {
+            position: relative;
+            width: 100px;
+            height: 240px;
+            text-align: center;
+            margin: 1rem 2rem;
+        }
+        .otter-head {
+            position: absolute;
+            top: 6px;
+            left: 5px;
+            background-color: #ceb7a7;
+            width: 80px;
+            height: 70px;
+            border-radius: 50%;
+        }
+        .otter-head-back {
+            position: absolute;
+            left: 1px;
+            width: 88px;
+            height: 90px;
+            background-color: #6d523f;
+            z-index: -10;
+            border-radius: 50%;
+        }
+        .otter-ear {
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: #3c2a23;
+            z-index: -1;
+        }
+        .otter-ear-right {
+            right: -6px;
+            border-radius: 35% 50%;
+        }
+        .otter-ear-left {
+            left: -6px;
+            border-radius: 50% 35%
+        }
+        .otter-eyelid {
+            position: absolute;
+            background-color: #ceb7a7;
+            width: 20px;
+            height: 0;
+            max-height: 20px;
+            border-radius: 50%;
+            z-index: 50;
+
+            animation: blink 2s infinite;
+        }
+        .otter-eye {
+            position: absolute;
+            top: 20px;
+            background-color: black;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .otter-eye-glisten {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 8px;
+            height: 11px;
+            border-radius: 50%;
+            box-shadow: 2px -3px 0 0 white;
+        }
+        .otter-eye-left {
+            left: 10px
+        }
+        .otter-eye-right {
+            right: 10px;
+        }
+        .otter-nose {
+            position: absolute;
+            top: 32px;
+            left: 26px;
+            display: inline-block;
+            width: 26px;
+            height: 24px;
+            background-color: #3c2a23;
+            -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+            border-radius:         50%  50%  50%  50%  / 60%   60%   40%  40%;
+            z-index: 10;
+        }
+        .otter-cleft {
+            position: absolute;
+            top: 56px;
+            left: 38px;
+            height: 6px;
+            width: 2px;
+            background-color: black;
+            z-index: 8;
+        }
+        .otter-mouth {
+            position: absolute;
+            top: 62px;
+            left: 30px;
+            height: 5px;
+            width: 20px;
+            border-radius: 40%;
+            border-top: 2px solid black;
+            z-index: 10;
+        }
+        .otter-wiskers {
+            position: absolute;
+            top: 58px;
+        }
+        .otter-wiskers-right {
+            position: absolute;
+            top: 58px;
+            transform: rotateY(180deg);
+            right: 0px;
+        }
+        .otter-wiskers-top {
+            position: absolute;
+            left: 8px;
+            width: 16px;
+            height: 2px;
+            border-top: 1px solid white;
+            border-radius: 30% 0;
+            transform: rotate(-13deg);
+        }
+        .otter-wiskers-middle {
+            position: absolute;
+            top: 3px;
+            left: 8px;
+            width: 18px;
+            height: 2px;
+            border-top: 1px solid white;
+            border-radius: 30% 0;
+            transform: rotate(-20deg);
+        }
+        .otter-wiskers-bottom {
+            position: absolute;
+            top: 6px;
+            left: 10px;
+            width: 20px;
+            height: 2px;
+            border-top: 1px solid white;
+            border-radius: 30% 0;
+            transform: rotate(-28deg);
+        }
+        .otter-beard {
+            position: absolute;
+            top: 50px;
+            left: 15px;
+            background-color: #e2d8c9;
+            height: 20px;
+            width: 50px;
+            border-radius: 20px 20px 50px 50px;
+        }
+        .otter-neck {
+            position: absolute;
+            top: 65px;
+            left: 22px;
+            background-color: #e2d8c9;
+            height: 20px;
+            width: 36px;
+            border-radius: 10px 10px 50px 50px;
+        }
+        .otter-body {
+            position: absolute;
+            top: 50px;
+            background-color: #6d523f;
+            height: 180px;
+            width: 90px;
+            -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+            border-radius: 50% 50% 50% 50% / 70% 70% 20% 20%;
+            z-index: -1;
+
+            -webkit-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+        }
+        .otter-belly {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            background-color: #e2d8c9;
+            height: 160px;
+            width: 60px;
+            -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+            border-radius:         50%  50%  50%  50%  / 60%   60%   40%  40%;
+        }
+        .otter-leg {
+            position: absolute;
+            top: 110px;
+            background-color: #694e3c;
+            height: 70px;
+            width: 40px;
+            z-index: 10;
+        }
+        .otter-leg-right {
+            right: -10px;
+             -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+            border-radius: 50% 50% 50% 50% / 70% 70% 40% 20%;
+        }
+        .otter-leg-left {
+            left: -10px;
+             -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+            border-radius: 50% 50% 50% 50% / 70% 70% 20% 40%;
+        }
+        .otter-arm {
+            position: absolute;
+            top: 50px;
+            background-color: #694e3c;
+            height: 25px;
+            width: 35px;
+        }
+        .otter-arm-right {
+            border-radius: 40% 40% 60% 40%;
+            transform: rotate(-45deg);
+            right: -2px;
+        }
+        .otter-arm-left {
+            border-radius: 40% 40% 40% 60%;
+            transform: rotate(60deg);
+            left: -4px;
+        }
+        .otter-forearm {
+            position: absolute;
+            top: 57px;
+            background-color: #694e3c;
+            height: 25px;
+            width: 35px;
+            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
+        }
+        .otter-forearm-right {
+            border-radius: 50%;
+            transform: rotate(15deg);
+            right: 13px;
+
+            animation: arm-right 2s infinite;
+        }
+        .otter-forearm-left {
+            border-radius: 50%;
+            transform: rotate(-25deg);
+            top: 60px;
+            left: 10px;
+
+            animation: arm-left 2s infinite;
+        }
+        .otter-foot {
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            height: 20px;
+            background-color: #3c2a23;
+            border-radius: 50% 50% 30% 30%;
+            z-index: 15;
+
+            -webkit-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+        }
+        .otter-foot-left {
+            left: -10px;
+            animation: foot-left 2s infinite;
+        }
+        .otter-foot-right {
+            right: -10px;
+            animation: foot-right 2s infinite;
+        }
+        .otter-tail {
+            background-color: #694e3c;
+            position: absolute;
+            top: 120px;
+            right: -18px;
+            height: 50px;
+            width: 30px;
+            border-radius: 50%;
+            transform: rotate(-20deg);
+
+            -webkit-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+        }
+        .otter-tail-end {
+            background-color: #694e3c;
+            position: absolute;
+            top: 145px;
+            right: -36px;
+            height: 24px;
+            width: 40px;
+            border-radius: 50%;
+
+            -webkit-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 24px -4px rgba(0,0,0,0.75);
+
+            animation: tail 2s infinite;
+        }
+
+        .error-btn {
+            color: #000000;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid #000000;
+            padding: .5rem 2rem;
+            margin-bottom: 2rem;
+        }
+        .error-btn:hover, error-btn:focus {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+        @keyframes blink {
+            0%  {height: 0;}
+            85%  {height: 0;}
+            93% {height: 100%;}
+            100% {height: 0;}
+        }
+        @-moz-keyframes blink {
+            0%  {height: 0;}
+            80%  {height: 0;}
+            90% {height: 100%;}
+            100% {height: 0;}
+        }
+        @-webkit-keyframes blink {
+            0%  {height: 0;}
+            80%  {height: 0;}
+            90% {height: 100%;}
+            100% {height: 0;}
+        }
+
+        @keyframes tail {
+            0%  {transform: none;}
+            20% {transform: rotate(10deg);}
+            60% {transform: rotate(-10deg);}
+            100% {transform: none;}
+        }
+        @-moz-keyframes tail {
+            0%  {transform: none;}
+            20% {transform: rotate(10deg);}
+            60% {transform: rotate(-10deg);}
+            100% {transform: none;}
+        }
+        @-webkit-keyframes tail {
+            0%  {transform: none;}
+            20% {transform: rotate(10deg);}
+            60% {transform: rotate(-10deg);}
+            100% {transform: none;}
+        }
+
+        @keyframes arm-right {
+            0%  {transform: rotate(15deg);}
+            50% {transform: rotate(-5deg);}
+            100% {transform: rotate(15deg);}
+        }
+        @-moz-keyframes arm-right {
+            0%  {transform: rotate(15deg);}
+            50% {transform: rotate(0deg);}
+            100% {transform: rotate(15deg);}
+        }
+        @-webkit-keyframes arm-right {
+            0%  {transform: rotate(15deg);}
+            50% {transform: rotate(0deg);}
+            100% {transform: rotate(15deg);}
+        }
+
+        @keyframes arm-left {
+            0%  {transform: rotate(-25deg);}
+            50% {transform: rotate(5deg);}
+            100% {transform: rotate(-25deg);}
+        }
+        @-moz-keyframes arm-left {
+            0%  {transform: rotate(-25deg);}
+            50% {transform: rotate(-15deg);}
+            100% {transform: rotate(-25deg);}
+        }
+        @-webkit-keyframes arm-left {
+            0%  {transform: rotate(-25deg);}
+            50% {transform: rotate(-15deg);}
+            100% {transform: rotate(-25deg);}
+        }
+
+        @keyframes foot-left {
+            0%  {transform: none;}
+            50% {transform: rotate(-5deg);}
+            100% {transform: none;}
+        }
+        @-moz-keyframes foot-left {
+            0%  {transform: none;}
+            50% {transform: rotate(-5deg);}
+            100% {transform: none;}
+        }
+        @-webkit-keyframes foot-left {
+            0%  {transform: none;}
+            50% {transform: rotate(-5deg);}
+            100% {transform: none;}
+        }
+
+        @keyframes foot-right {
+            0%  {transform: none;}
+            50% {transform: rotate(5deg);}
+            100% {transform: none;}
+        }
+        @-moz-keyframes foot-right {
+            0%  {transform: none;}
+            50% {transform: rotate(5deg);}
+            100% {transform: none;}
+        }
+        @-webkit-keyframes foot-right {
+            0%  {transform: none;}
+            50% {transform: rotate(5deg);}
+            100% {transform: none;}
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <span>Morgyn Stryker</span>
+    </nav>
+    <div class="content-wrapper">
+        <div class="main-wrapper">
+            <div class="description-text">
+                <h1>Under Development</h1>
+                <p>
+                    The site needed <a href="https://github.com/MsStryker/morgynstryker.com">under renovation</a>,
+                    you may follow along here.
+                </p>
+                <p>
+                    In the meantime, here is an otter!
+                </p>
+            </div>
+            <div class="otter-wrapper">
+                <div class="otter">
+                    <div class="otter-head">
+                        <div class="otter-eye otter-eye-left">
+                            <div class="otter-eyelid"></div>
+                            <div class="otter-eye-glisten"></div>
+                        </div>
+                        <div class="otter-eye otter-eye-right">
+                            <div class="otter-eyelid"></div>
+                            <div class="otter-eye-glisten"></div>
+                        </div>
+                        <div class="otter-ear otter-ear-left"></div>
+                        <div class="otter-ear otter-ear-right"></div>
+                        <div class="otter-nose"></div>
+                        <div class="otter-cleft"></div>
+                        <div class="otter-mouth"></div>
+                        <div class="otter-mouth"></div>
+                        <div class="otter-beard"></div>
+                        <div class="otter-neck"></div>
+                        <div class="otter-wiskers">
+                            <div class="otter-wiskers-top"></div>
+                            <div class="otter-wiskers-middle"></div>
+                            <div class="otter-wiskers-bottom"></div>
+                        </div>
+                        <div class="otter-wiskers-right">
+                            <div class="otter-wiskers-top"></div>
+                            <div class="otter-wiskers-middle"></div>
+                            <div class="otter-wiskers-bottom"></div>
+                        </div>
+                    </div>
+                    <div class="otter-head-back"></div>
+                    <div class="otter-body">
+                        <div class="otter-belly"></div>
+                        <div class="otter-arm otter-arm-left"></div>
+                        <div class="otter-arm otter-arm-right"></div>
+                        <div class="otter-forearm otter-forearm-left"></div>
+                        <div class="otter-forearm otter-forearm-right"></div>
+                        <div class="otter-leg otter-leg-left"></div>
+                        <div class="otter-leg otter-leg-right"></div>
+                        <div class="otter-foot otter-foot-left"></div>
+                        <div class="otter-foot otter-foot-right"></div>
+                        <div class="otter-tail"></div>
+                        <div class="otter-tail-end"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<footer class="footer">-->
+            <!--{% include 'base/widgets/copyright_brand.html' %}-->
+        <!--</footer>-->
+    </div>
+</body>
+</html>
+
+
