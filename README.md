@@ -18,7 +18,7 @@ I have another site up [with Django](https://wonkrz.com/), if you wanted to see 
 
 The following items are needed to setup the application.
 
-- [Python 3.6.4](https://python.org)
+- [Python 3.6](https://python.org)
 - [virtualenv](https://virtualenv.pypa.io/en/stable/)
 - [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
 
@@ -101,9 +101,9 @@ The project was restructured to the following format:
         |   |-- urls.py
         |   |-- wsgi.py
         |-- __init__.py
+        |-- manage.py
     |-- .gitignore
     |-- LICENSE
-    |-- manage.py
     |-- README.md
     |-- requirements.txt
     |-- requirements_dev.txt

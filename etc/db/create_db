@@ -1,0 +1,4 @@
+# Create a database with the owner using the default
+CREATE DATABASE morgynstryker_com WITH ENCODING 'UTF8';
+CREATE USER morgyn WITH PASSWORD 'somesecretpassword';
+GRANT ALL PRIVILEGES ON DATABASE morgynstryker_com TO morgyn;
