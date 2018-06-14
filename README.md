@@ -2,17 +2,25 @@
 
 This is an application for my upcoming refreshed personal website. 
 
-I haven't been updating my [website](https://morgynstryker.com) due to work and I as I looked at what I had 
-started over a year ago, I have decided to start fresh. I will be using Django 2.0.2 and Python 3.6.4. The 
-reason for doing this in Django over Flask or another framework is because you have so many features built-in. 
-Django has the ORM built-in where Flask requires you to use a SQLAlchemy ORM or something similar/else. 
-Django has admin functionality built-in, so you can manage the site and easily add new posts to the page behind 
-a login. Due to these features and many more, Django is extremely quick to build a fairly secure website. 
+I haven't been updating my [website](http://morgynstryker.com) due to work and I as I looked at what I had 
+started over a year ago, I have decided to start fresh. Due to AWS and routing with GitHub pages, it is using 
+HTTP and not HTTPS. When this gets served again, it will be back on HTTPS. 
+
+I will be using [Django](https://www.djangoproject.com/) 2.0.2 and Python 3.6.4. The reason for doing this 
+in Django over [Flask](http://flask.pocoo.org/) or another framework is because you have so many 
+features built-in. Django has the ORM built-in where Flask requires you to use a SQLAlchemy ORM 
+or something else. Django has admin functionality built-in, so you can manage the site and easily 
+add new posts to the page behind a login page. Due to these features and many more, Django is 
+extremely quick to build a fairly secure website. Of course, building it and documenting every step in 
+the process does take a little bit extra.
 
 If you wish to not be placed in the box that Django restricts you to, Flask is an excellent alternative. However,
-time to flight can be a bit longer with Flask.
+time to flight can be a bit longer with Flask. [Chalice](https://chalice.readthedocs.io/en/latest/) is 
+an excellent option if you want to build a serverless application in AWS and perhaps a good use for a
+future microservice. 
 
-I have another site up [with Django](https://wonkrz.com/), if you wanted to see something working.
+I have another site up [with Django](https://wonkrz.com/), if you wanted to see something working that is
+served using AWS.
 
 ## Pre-requisites 
 
