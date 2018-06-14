@@ -37,31 +37,33 @@ The app was created using the following:
 I reorganized the default django setup, as you can see in the Project Structure section below. I had to modify the
 `manage.py`, `wsgi.py`, and `settings.py` to point to the correct location of the files on reorganization.
 
-`manager.py`
+`manage.py`
 ```python
 import os
 ...
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "morgynstryker.config.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 ...
 ```
 `wsgi.py`
 ```python
 import os
 ...
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "morgynstryker.config.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 ...
 ```
 `settings.py`
 ```python
 ...
-ROOT_URLCONF = 'morgynstryker.config.urls'
+ROOT_URLCONF = 'config.urls'
 ...
-WSGI_APPLICATION = 'morgynstryker.config.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 ...
 ```
 If you are like me and would like to modify the structure of the application, these are the items you will
 need to change. I have created a `settings_example.py` to see some of these changes. This will NEVER get used and so, it
-is ok to check into the project.
+is ok to check into the project for sample purposes. 
+
+NOTE: You should NEVER check in any secret information such as `settings.py` into source control!!!
 
 Now, I haven't done any migrations yet, but you should still be able to run the application and see an 
 HTML page. If you go to your command line and enter the following:
